@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderContainer from "./components/HeaderComponents/HeaderContainer";
 import CardContainer from "./components/CardComponents/CardContainer";
+import FooterContainer from "./components/FooterComponents/FooterContainer";
 import "./App.css";
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <div className="card">
       <HeaderContainer />
       <CardContainer />
+      <FooterContainer />
     </div>
   );
 };
