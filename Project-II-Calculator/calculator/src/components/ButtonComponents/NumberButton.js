@@ -1,11 +1,9 @@
 import React from 'react';
 import './Button.css';
 
-function NumberButton(props) {
+function NumberButton({ value, style, setValue }) {
     return (
-        <button className={props.buttonStyle}>
-            {props.text}
-        </button>
+        <div onClick={() => setValue(value)} className={style}>{value}</div>
     );
 }
 

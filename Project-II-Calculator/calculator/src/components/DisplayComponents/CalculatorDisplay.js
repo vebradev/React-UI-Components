@@ -1,10 +1,10 @@
 import React from 'react';
 import './Display.css';
 
-function CalculatorDisplay(props) {
+function CalculatorDisplay({ value }) {
     return (
         <div className="display">
-            <h1></h1>
+            <h1>0</h1>
         </div>
     );
 }
