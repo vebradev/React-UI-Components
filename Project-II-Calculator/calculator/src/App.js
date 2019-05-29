@@ -1,21 +1,39 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from "react";
+import CalculatorDisplay from "./components/DisplayComponents/CalculatorDisplay";
+import NumberButton from "./components/ButtonComponents/NumberButton";
+import ActionButton from "./components/ButtonComponents/ActionButton";
+import OperatorButton from "./components/ButtonComponents/OperatorButton";
+import "./App.css";
+
 
 const App = () => {
+  const [value, setValue] = useState(0);
+
   return (
-    <div>
-      <h3>Welcome to React Calculator</h3>
-      <p>
-        We have given you a starter project. You'll want to build out your
-        components in their respective files, remove this code and replace it
-        with the proper components.
-      </p>
-      <p>
-        <strong>
-          Don't forget to `default export` your components and import them here
-          inside of this file in order to make them work.
-        </strong>
-      </p>
+    <div className="calculator">
+      <div className="row">
+        <CalculatorDisplay />
+      </div>
+      <div className="row">
+        <ActionButton text="clear" buttonStyle="clear" />
+        <OperatorButton text="÷" buttonStyle="operator" />
+      </div>
+      <div className="row">
+        {[7,8,9].map(number => <NumberButton text={number} style="number" key={number} value={number} setValue={setValue} />)}
+        <OperatorButton text="×" buttonStyle="operator" />
+      </div>
+      <div className="row">
+        {[4,5,6].map(number => <NumberButton text={number} style="number" key={number} value={number} setValue={setValue} />)}
+        <OperatorButton text="−" buttonStyle="operator" />
+      </div>
+      <div className="row">
+        {[1,2,3].map(number => <NumberButton text={number} style="number" key={number} value={number} setValue={setValue} />)}
+        <OperatorButton text="+" buttonStyle="operator" />
+      </div>
+      <div className="row">
+        <ActionButton text="0" buttonStyle="zero" />
+        <OperatorButton text="=" buttonStyle="operator" />
+      </div>
     </div>
   );
 };

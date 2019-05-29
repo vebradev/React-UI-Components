@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.css';
 
-function ActionButton(props) {
+function OperatorButton(props) {
     return (
         <div className={props.buttonStyle}>
             {props.text}
@@ -9,4 +9,4 @@ function ActionButton(props) {
     );
 }
 
-export default ActionButton;
+export default OperatorButton;
